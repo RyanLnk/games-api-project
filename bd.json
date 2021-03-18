@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Hackandslash"
+    }
+  ],
+  "developers": [
+    {
+      "id": 1,
+      "name": "Santa Mônica"
+    }
+  ],
+  "platforms": [
+    {
+      "id": 1,
+      "name": "PS4"
+    },
+    {
+      "name": "PC",
+      "id": 2
+    }
+  ],
+  "games": [
+    {
+      "name": "God of War",
+      "release": "2018",
+      "synopsis": "Isso aqui é somente um teste",
+      "metascore": "94",
+      "categoryId": "1",
+      "developerId": "1",
+      "platformId": "1",
+      "id": 1
+    },
+    {
+      "name": "Skyrim",
+      "release": "2011",
+      "synopsis": "Isso aqui é somente um teste",
+      "metascore": "100",
+      "categoryId": "1",
+      "developerId": "1",
+      "platformId": "2",
+      "id": 2
+    }
+  ]
+}
