@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
+import ButtonSave from '../../components/ButtonSave';
+
 const Categories = () => {
   const M = window.M;
   const navigate = useNavigate();
@@ -42,7 +44,7 @@ const Categories = () => {
 
   return (
     <div className="row">
-      <h1>Category form</h1>
+      <h1>Categories Form</h1>
       <form className="col s12" onSubmit={createCategory}>
         <div className="row">
           <div className="input-field col s12">
@@ -57,10 +59,7 @@ const Categories = () => {
             <label htmlFor="name">Name</label>
           </div>
         </div>
-        <button className="btn waves-effect waves-light" type="submit">
-          Save
-          <i className="material-icons right">send</i>
-        </button>
+        <ButtonSave />
       </form>
     </div>
   );

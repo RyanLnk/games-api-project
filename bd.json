@@ -1,18 +1,38 @@
 {
   "categories": [
     {
-      "name": "Adventure",
+      "name": "Action",
       "id": 1
     },
     {
-      "name": "Action",
+      "name": "Fight",
       "id": 2
+    },
+    {
+      "name": "RPG",
+      "id": 3
+    },
+    {
+      "name": "MMO",
+      "id": 4
+    },
+    {
+      "name": "Moba",
+      "id": 5
     }
   ],
   "developers": [
     {
       "id": 1,
       "name": "Santa Mônica"
+    },
+    {
+      "name": "Hirez",
+      "id": 3
+    },
+    {
+      "name": "Ubsoft",
+      "id": 4
     }
   ],
   "platforms": [
@@ -23,6 +43,18 @@
     {
       "name": "PC",
       "id": 2
+    },
+    {
+      "name": "PS3",
+      "id": 3
+    },
+    {
+      "name": "Xbox One",
+      "id": 4
+    },
+    {
+      "name": "Xbox Series",
+      "id": 5
     }
   ],
   "games": []

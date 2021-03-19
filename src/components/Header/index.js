@@ -24,7 +24,7 @@ const Header = () => {
           <ul className="right hide-on-med-and-down">
             <li>
               <DropdownTrigger data_target="id_games" title="Games" />
-              
+
               <ul id="id_games" className="dropdown-content">
                 <DropdownContent to="/" title="Lista" />
                 <DropdownContent to="/gamesform" title="Formulário" />

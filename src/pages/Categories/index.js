@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonAdd from '../../components/ButtonAdd';
 import ButtonRemove from '../../components/ButtonRemove';
 import EmptyTable from '../../components/EmptyTable';
 import LinkEdit from '../../components/LinkEdit';
+import Thead from '../../components/Thead';
 
-import './index.css';
+import '../Style/index.css';
 
 const Categories = () => {
   const M = window.M;
@@ -47,12 +48,7 @@ const Categories = () => {
         <h1>Categories</h1>
         <div className="row">
           <table className="highlight">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th className="right-align">Options</th>
-              </tr>
-            </thead>
+            <Thead />
             <tbody>
               {categories.map((category) => (
                 <tr key={category.id}>

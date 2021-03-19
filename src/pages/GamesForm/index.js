@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const GamesForm = () => {
   return (
-    <div>
-      
+    <div className="row">
+      <h1>Games Form</h1>
     </div>
-  )
-}
+  );
+};
 
-export default GamesForm
+export default GamesForm;
