@@ -3,6 +3,10 @@
     {
       "name": "Adventure",
       "id": 1
+    },
+    {
+      "name": "Action",
+      "id": 2
     }
   ],
   "developers": [

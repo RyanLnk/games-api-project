@@ -1,16 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import ButtonAdd from '../../components/ButtonAdd';
 
+import ButtonAdd from '../../components/ButtonAdd';
+import ButtonRemove from '../../components/ButtonRemove';
 import EmptyTable from '../../components/EmptyTable';
+import LinkEdit from '../../components/LinkEdit';
 
 import './index.css';
 
 const Categories = () => {
   const M = window.M;
   const navigate = useNavigate();
-
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -57,24 +58,12 @@ const Categories = () => {
                 <tr key={category.id}>
                   <td>{category.name}</td>
                   <td className="right-align">
-                    <Link to={`/categoriesform/${category.id}`}>
-                      <span>
-                        <i className="material-icons blue-text text-accent-2">
-                          edit
-                        </i>
-                      </span>
-                    </Link>
+                    <LinkEdit to={`/categoriesform/${category.id}`} />
 
-                    <button
-                      className="button-delete"
-                      onClick={() => deleteCategory(category.id)}
-                    >
-                      <span className="button-delete-span">
-                        <i className="material-icons red-text text-accent-3">
-                          delete_forever
-                        </i>
-                      </span>
-                    </button>
+                    <ButtonRemove
+                      deleteFunction={deleteCategory}
+                      parameter={category.id}
+                    />
                   </td>
                 </tr>
               ))}

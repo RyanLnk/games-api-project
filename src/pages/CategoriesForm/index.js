@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
 const Categories = () => {
+  const M = window.M;
   const navigate = useNavigate();
-
   const [name, setName] = useState('');
-
   const params = useParams();
 
   useEffect(() => {
@@ -16,14 +15,14 @@ const Categories = () => {
           `http://localhost:3000/categories/${params.id}`,
         );
         setName(response.data.name);
+        M.updateTextFields();
       }
       getCategories();
     }
-  }, [params.id]);
+  }, [params.id, M]);
 
   async function createCategory(e) {
     e.preventDefault();
-
     try {
       if (!params.id) {
         await axios.post('http://localhost:3000/categories', {
@@ -34,7 +33,6 @@ const Categories = () => {
           name,
         });
       }
-
       setName('');
       navigate('/categories');
     } catch (error) {

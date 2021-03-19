@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import DropdownContent from './DropdownContent';
+import DropdownTrigger from './DropdownTrigger';
+
 const Header = () => {
   const M = window.M;
 
@@ -20,95 +23,41 @@ const Header = () => {
           </Link>
           <ul className="right hide-on-med-and-down">
             <li>
-              <Link to="#!" className="dropdown-trigger" data-target="id_games">
-                Games<i className="material-icons right">arrow_drop_down</i>
-              </Link>
-
+              <DropdownTrigger data_target="id_games" title="Games" />
+              
               <ul id="id_games" className="dropdown-content">
-                <li>
-                  <Link to="/" className="blue-text">
-                    Lista
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/gamesform" className="blue-text">
-                    Formulário
-                  </Link>
-                </li>
+                <DropdownContent to="/" title="Lista" />
+                <DropdownContent to="/gamesform" title="Formulário" />
                 <li className="divider"></li>
               </ul>
             </li>
 
             <li>
-              <Link
-                to="#!"
-                className="dropdown-trigger"
-                data-target="id_categories"
-              >
-                Categories
-                <i className="material-icons right">arrow_drop_down</i>
-              </Link>
+              <DropdownTrigger data_target="id_categories" title="Categories" />
 
               <ul id="id_categories" className="dropdown-content">
-                <li>
-                  <Link to="/categories" className="blue-text">
-                    Lista
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/categoriesform" className="blue-text">
-                    Formulário
-                  </Link>
-                </li>
+                <DropdownContent to="/categories" title="Lista" />
+                <DropdownContent to="/categoriesform" title="Formulário" />
                 <li className="divider"></li>
               </ul>
             </li>
 
             <li>
-              <Link
-                to="#!"
-                className="dropdown-trigger"
-                data-target="id_developers"
-              >
-                Developers
-                <i className="material-icons right">arrow_drop_down</i>
-              </Link>
+              <DropdownTrigger data_target="id_developers" title="Developers" />
 
               <ul id="id_developers" className="dropdown-content">
-                <li>
-                  <Link to="/developers" className="blue-text">
-                    Lista
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developersform" className="blue-text">
-                    Formulário
-                  </Link>
-                </li>
+                <DropdownContent to="/developers" title="Lista" />
+                <DropdownContent to="/developersform" title="Formulário" />
                 <li className="divider"></li>
               </ul>
             </li>
 
             <li>
-              <Link
-                to="#!"
-                className="dropdown-trigger"
-                data-target="id_platfomrs"
-              >
-                Platforms<i className="material-icons right">arrow_drop_down</i>
-              </Link>
+              <DropdownTrigger data_target="id_platfomrs" title="Platforms" />
 
               <ul id="id_platfomrs" className="dropdown-content">
-                <li>
-                  <Link to="/platforms" className="blue-text">
-                    Lista
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/platformsform" className="blue-text">
-                    Formulário
-                  </Link>
-                </li>
+                <DropdownContent to="/platforms" title="Lista" />
+                <DropdownContent to="/platformsform" title="Formulário" />
                 <li className="divider"></li>
               </ul>
             </li>
