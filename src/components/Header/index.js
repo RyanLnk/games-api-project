@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const M = window.M;
+  document.addEventListener('DOMContentLoaded', () => {
+    const elems = document.querySelectorAll('.dropdown-trigger');
+    const instances = M.Dropdown.init(elems, {});
+  });
+
   return (
     <div>
       <nav className="blue">

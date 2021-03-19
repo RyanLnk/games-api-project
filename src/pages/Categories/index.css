@@ -1,0 +1,8 @@
+.button-delete {
+  border: 0;
+  background: transparent;
+}
+
+.button-delete-span {
+  cursor: pointer;
+}
