@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ButtonAdd from '../../components/ButtonAdd';
 
 import EmptyTable from '../../components/EmptyTable';
 
 import './index.css';
 
 const Categories = () => {
+  const M = window.M;
   const navigate = useNavigate();
 
   const [categories, setCategories] = useState([]);
@@ -23,6 +25,10 @@ const Categories = () => {
     try {
       if (window.confirm('Are you sure you want to delete the category?')) {
         await axios.delete(`http://localhost:3000/categories/${id}`);
+        M.toast({
+          html: 'Category deleted successfully!',
+          displayLength: 1500,
+        });
         setCategories(categories.filter((category) => category.id !== id));
       }
     } catch (error) {
@@ -43,14 +49,14 @@ const Categories = () => {
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Options</th>
+                <th className="right-align">Options</th>
               </tr>
             </thead>
             <tbody>
               {categories.map((category) => (
                 <tr key={category.id}>
                   <td>{category.name}</td>
-                  <td>
+                  <td className="right-align">
                     <Link to={`/categoriesform/${category.id}`}>
                       <span>
                         <i className="material-icons blue-text text-accent-2">
@@ -75,16 +81,7 @@ const Categories = () => {
             </tbody>
           </table>
         </div>
-
-        <div className="row">
-          <button
-            className="btn-floating btn-large waves-effect waves-light"
-            type="submit"
-            onClick={add}
-          >
-            <i className="material-icons">add</i>
-          </button>
-        </div>
+        <ButtonAdd add={add} />
       </div>
     );
   } else {
@@ -92,6 +89,7 @@ const Categories = () => {
       <div>
         <h1>Categories</h1>
         <EmptyTable />
+        <ButtonAdd add={add} />
       </div>
     );
   }

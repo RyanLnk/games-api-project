@@ -1,12 +1,8 @@
 {
   "categories": [
     {
-      "id": 1,
-      "name": "Action"
-    },
-    {
       "name": "Adventure",
-      "id": 2
+      "id": 1
     }
   ],
   "developers": [
