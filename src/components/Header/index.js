@@ -27,7 +27,7 @@ const Header = () => {
 
               <ul id="id_games" className="dropdown-content">
                 <DropdownContent to="/" title="Lista" />
-                <DropdownContent to="/gamesform" title="Formulário" />
+                <DropdownContent to="/gamesform" title="Cadastro" />
                 <li className="divider"></li>
               </ul>
             </li>
@@ -37,7 +37,7 @@ const Header = () => {
 
               <ul id="id_categories" className="dropdown-content">
                 <DropdownContent to="/categories" title="Lista" />
-                <DropdownContent to="/categoriesform" title="Formulário" />
+                <DropdownContent to="/categoriesform" title="Cadastro" />
                 <li className="divider"></li>
               </ul>
             </li>
@@ -47,7 +47,7 @@ const Header = () => {
 
               <ul id="id_developers" className="dropdown-content">
                 <DropdownContent to="/developers" title="Lista" />
-                <DropdownContent to="/developersform" title="Formulário" />
+                <DropdownContent to="/developersform" title="Cadastro" />
                 <li className="divider"></li>
               </ul>
             </li>
@@ -57,7 +57,7 @@ const Header = () => {
 
               <ul id="id_platfomrs" className="dropdown-content">
                 <DropdownContent to="/platforms" title="Lista" />
-                <DropdownContent to="/platformsform" title="Formulário" />
+                <DropdownContent to="/platformsform" title="Cadastro" />
                 <li className="divider"></li>
               </ul>
             </li>

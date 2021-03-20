@@ -19,6 +19,10 @@
     {
       "name": "Moba",
       "id": 5
+    },
+    {
+      "name": "FPS",
+      "id": 6
     }
   ],
   "developers": [
@@ -55,7 +59,32 @@
     {
       "name": "Xbox Series",
       "id": 5
+    },
+    {
+      "name": "Multiple",
+      "id": 6
     }
   ],
-  "games": []
+  "games": [
+    {
+      "id": 1,
+      "name": "God of War",
+      "release": "2018",
+      "synopsis": "Isso aqui é somente um teste",
+      "metascore": "94",
+      "categoryId": "1",
+      "developerId": "1",
+      "platformId": "1"
+    },
+    {
+      "id": 2,
+      "name": "Paladins",
+      "release": "2016",
+      "synopsis": "Jogo de FPS",
+      "metascore": "94",
+      "categoryId": "6",
+      "developerId": "3",
+      "platformId": "1"
+    }
+  ]
 }
