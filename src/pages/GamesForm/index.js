@@ -1,22 +1,19 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+
 import ButtonSave from '../../components/ButtonSave';
+import Input from '../../components/Input';
 
 const GamesForm = () => {
   const M = window.M;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const elems = document.querySelectorAll('select');
-    M.FormSelect.init(elems, {});
-  });
-
   const navigate = useNavigate();
+  const params = useParams();
+
   const [name, setName] = useState('');
   const [release, setRelease] = useState('');
   const [synopsis, setSynopsis] = useState('');
   const [metascore, setMetascore] = useState('');
-
   const [categoryId, setCategoryId] = useState('DEFAULT');
   const [developerId, setDeveloperId] = useState('DEFAULT');
   const [platformId, setPlatformId] = useState('DEFAULT');
@@ -36,7 +33,6 @@ const GamesForm = () => {
       const responsePlatforms = await axios.get(
         'http://localhost:3000/platforms',
       );
-
       setCategories(responseCategories.data);
       setDevelopers(responseDevelopers.data);
       setPlatforms(responsePlatforms.data);
@@ -44,55 +40,97 @@ const GamesForm = () => {
     getTables();
   }, []);
 
+  useEffect(() => {
+    const elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems, {});
+  }, [categories, developers, platforms, M.FormSelect]);
+
+  useEffect(() => {
+    if (params.id) {
+      async function getGames() {
+        const response = await axios.get(
+          `http://localhost:3000/games/${params.id}`,
+        );
+        setName(response.data.name);
+        setRelease(response.data.release);
+        setSynopsis(response.data.synopsis);
+        setMetascore(response.data.metascore);
+        setCategoryId(response.data.categoryId);
+        setDeveloperId(response.data.developerId);
+        setPlatformId(response.data.platformId);
+        M.updateTextFields();
+      }
+      getGames();
+    }
+  }, [params.id, M]);
+
+  async function createGame(e) {
+    e.preventDefault();
+    try {
+      if (!params.id) {
+        await axios.post('http://localhost:3000/games', {
+          name,
+          release,
+          synopsis,
+          metascore,
+          categoryId: Number(categoryId),
+          developerId: Number(developerId),
+          platformId: Number(platformId),
+        });
+      } else {
+        await axios.put(`http://localhost:3000/games/${params.id}`, {
+          name,
+          release,
+          synopsis,
+          metascore,
+          categoryId: Number(categoryId),
+          developerId: Number(developerId),
+          platformId: Number(platformId),
+        });
+      }
+      navigate('/');
+    } catch (error) {
+      //alert('Error saving data!');
+      console.log(error);
+    }
+  }
+
   return (
     <div className="row">
       <h1>Games Form</h1>
-      <form className="col s12">
+      <form className="col s12" onSubmit={createGame}>
         <div className="row">
           <div className="input-field col s12">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="validate"
-              value={name}
-              onChange={({ target }) => setName(target.value)}
-            />
+            <Input name="name" id="name" value={name} function={setName} />
             <label htmlFor="name">Name</label>
           </div>
 
           <div className="input-field col s12">
-            <input
-              type="text"
+            <Input
               name="release"
               id="release"
-              className="validate"
               value={release}
-              onChange={({ target }) => setRelease(target.value)}
+              function={setRelease}
             />
             <label htmlFor="release">Release</label>
           </div>
 
           <div className="input-field col s12">
-            <input
-              type="text"
+            <Input
               name="synopsis"
               id="synopsis"
-              className="validate"
               value={synopsis}
-              onChange={({ target }) => setSynopsis(target.value)}
+              function={setSynopsis}
             />
             <label htmlFor="synopsis">Synopsis</label>
           </div>
 
           <div className="input-field col s12">
-            <input
-              type="text"
+            <Input
               name="metascore"
               id="metascore"
-              className="validate"
               value={metascore}
-              onChange={({ target }) => setMetascore(target.value)}
+              function={setMetascore}
             />
             <label htmlFor="metascore">Metascore</label>
           </div>

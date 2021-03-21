@@ -23,6 +23,10 @@
     {
       "name": "FPS",
       "id": 6
+    },
+    {
+      "name": "Simulation",
+      "id": 7
     }
   ],
   "developers": [
@@ -37,6 +41,18 @@
     {
       "name": "Ubsoft",
       "id": 4
+    },
+    {
+      "name": "SCS Software",
+      "id": 5
+    },
+    {
+      "name": "Bethesda Game Studios",
+      "id": 6
+    },
+    {
+      "name": "Mojang Studios",
+      "id": 7
     }
   ],
   "platforms": [
@@ -85,6 +101,46 @@
       "categoryId": "6",
       "developerId": "3",
       "platformId": "1"
+    },
+    {
+      "name": "Skyrim",
+      "release": "2011",
+      "synopsis": "The Elder Scrolls V: Skyrim é um jogo eletrônico de RPG de ação",
+      "metascore": "96",
+      "categoryId": 1,
+      "developerId": 6,
+      "platformId": 2,
+      "id": 3
+    },
+    {
+      "name": "Euro Truck Simulator 2",
+      "release": "2012",
+      "synopsis": "ETS2 é um jogo de simulação de caminhões",
+      "metascore": "96",
+      "categoryId": 7,
+      "developerId": 5,
+      "platformId": 2,
+      "id": 4
+    },
+    {
+      "name": "Grand Theft Auto: San Andreas",
+      "release": "2004 ",
+      "synopsis": "Grand Theft Auto: San Andreas é um jogo eletrônico de ação-aventura",
+      "metascore": "98",
+      "categoryId": 1,
+      "developerId": 4,
+      "platformId": 6,
+      "id": 5
+    },
+    {
+      "name": "Minecraft",
+      "release": "2011",
+      "synopsis": "Minecraft é um jogo eletrônico sandbox de sobrevivência",
+      "metascore": "98",
+      "categoryId": 1,
+      "developerId": 7,
+      "platformId": 6,
+      "id": 6
     }
   ]
 }
