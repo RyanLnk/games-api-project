@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import ButtonAdd from '../../components/ButtonAdd';
 import ButtonRemove from '../../components/ButtonRemove';
@@ -8,7 +9,7 @@ import EmptyTable from '../../components/EmptyTable';
 import LinkEdit from '../../components/LinkEdit';
 import Thead from '../../components/Thead';
 
-import '../Style/index.css';
+import '../../assets/styles/index.css';
 
 const PlatformsForm = () => {
   const M = window.M;
@@ -27,14 +28,11 @@ const PlatformsForm = () => {
     try {
       if (window.confirm('Are you sure you want to delete the platform?')) {
         await axios.delete(`http://localhost:3000/platforms/${id}`);
-        M.toast({
-          html: 'Platform deleted successfully!',
-          displayLength: 1500,
-        });
+        toast.dark('Platform deleted successfully!');
         setPlatforms(platforms.filter((platform) => platform.id !== id));
       }
     } catch (error) {
-      alert(`Couldn't delete platform`);
+      toast.error(`Couldn't delete platform`);
     }
   }
 

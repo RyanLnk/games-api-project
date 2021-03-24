@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
 import ButtonSave from '../../components/ButtonSave';
 
@@ -30,15 +31,17 @@ const Categories = () => {
         await axios.post('http://localhost:3000/categories', {
           name,
         });
+        toast.dark('Category successfully registered!');
       } else {
         await axios.put(`http://localhost:3000/categories/${params.id}`, {
           name,
         });
+        toast.dark('Category updated successfully!');
       }
       setName('');
       navigate('/categories');
     } catch (error) {
-      alert('Error saving data!');
+      toast.error('Error saving data!');
     }
   }
 

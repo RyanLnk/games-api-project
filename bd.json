@@ -39,7 +39,7 @@
       "id": 3
     },
     {
-      "name": "Ubsoft",
+      "name": "Ubisoft",
       "id": 4
     },
     {
@@ -53,12 +53,20 @@
     {
       "name": "Mojang Studios",
       "id": 7
+    },
+    {
+      "name": "Rockstar",
+      "id": 8
+    },
+    {
+      "name": "343 Industries",
+      "id": 9
     }
   ],
   "platforms": [
     {
-      "id": 1,
-      "name": "PS4"
+      "name": "PS4",
+      "id": 1
     },
     {
       "name": "PC",
@@ -73,34 +81,32 @@
       "id": 4
     },
     {
-      "name": "Xbox Series",
+      "name": "Xbox Seriers S/X",
       "id": 5
     },
     {
       "name": "Multiple",
       "id": 6
+    },
+    {
+      "name": "Nintendo Switch",
+      "id": 7
+    },
+    {
+      "name": "Xbox 360",
+      "id": 8
     }
   ],
   "games": [
     {
-      "id": 1,
-      "name": "God of War",
-      "release": "2018",
-      "synopsis": "Isso aqui é somente um teste",
-      "metascore": "94",
-      "categoryId": "1",
-      "developerId": "1",
-      "platformId": "1"
-    },
-    {
-      "id": 2,
       "name": "Paladins",
       "release": "2016",
-      "synopsis": "Jogo de FPS",
+      "synopsis": "Paladins é um jogo eletrônico de tiro em primeira pessoa",
       "metascore": "94",
-      "categoryId": "6",
-      "developerId": "3",
-      "platformId": "1"
+      "categoryId": 6,
+      "developerId": 3,
+      "platformId": 6,
+      "id": 2
     },
     {
       "name": "Skyrim",
@@ -109,18 +115,8 @@
       "metascore": "96",
       "categoryId": 1,
       "developerId": 6,
-      "platformId": 2,
+      "platformId": 6,
       "id": 3
-    },
-    {
-      "name": "Euro Truck Simulator 2",
-      "release": "2012",
-      "synopsis": "ETS2 é um jogo de simulação de caminhões",
-      "metascore": "96",
-      "categoryId": 7,
-      "developerId": 5,
-      "platformId": 2,
-      "id": 4
     },
     {
       "name": "Grand Theft Auto: San Andreas",
@@ -128,19 +124,29 @@
       "synopsis": "Grand Theft Auto: San Andreas é um jogo eletrônico de ação-aventura",
       "metascore": "98",
       "categoryId": 1,
-      "developerId": 4,
+      "developerId": 8,
       "platformId": 6,
       "id": 5
     },
     {
-      "name": "Minecraft",
-      "release": "2011",
-      "synopsis": "Minecraft é um jogo eletrônico sandbox de sobrevivência",
-      "metascore": "98",
+      "name": "God Of War",
+      "release": "2018",
+      "synopsis": "God of War é uma série de jogos eletrônicos de ação-aventura",
+      "metascore": "96",
       "categoryId": 1,
-      "developerId": 7,
-      "platformId": 6,
-      "id": 6
+      "developerId": 1,
+      "platformId": 1,
+      "id": 7
+    },
+    {
+      "name": "Halo: Combat Evolved Anniversary",
+      "release": "2011",
+      "synopsis": "Combat Evolved Anniversary é um jogo eletrônico de tiro em primeira",
+      "metascore": "95",
+      "categoryId": 6,
+      "developerId": 9,
+      "platformId": 8,
+      "id": 8
     }
   ]
 }

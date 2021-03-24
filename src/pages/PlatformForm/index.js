@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
 import ButtonSave from '../../components/ButtonSave';
 
@@ -30,15 +31,17 @@ const PlatformsForm = () => {
         await axios.post('http://localhost:3000/platforms', {
           name,
         });
+        toast.dark('Platform successfully registered!');
       } else {
         await axios.put(`http://localhost:3000/platforms/${params.id}`, {
           name,
         });
+        toast.dark('Platform updated successfully!');
       }
       setName('');
       navigate('/platforms');
     } catch (error) {
-      alert('Error saving data!');
+      toast.error('Error saving data!');
     }
   }
 

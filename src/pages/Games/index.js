@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
 
 import ButtonAdd from '../../components/ButtonAdd';
 import ButtonRemove from '../../components/ButtonRemove';
 import EmptyTable from '../../components/EmptyTable';
 import LinkEdit from '../../components/LinkEdit';
+
+import '../../assets/styles/index.css';
 
 const Games = () => {
   const M = window.M;
@@ -27,12 +30,9 @@ const Games = () => {
       try {
         await axios.delete(`http://localhost:3000/games/${id}`);
         setGames(games.filter((game) => game.id !== id));
-        M.toast({
-          html: 'Game deleted successfully!',
-          displayLength: 1500,
-        });
+        toast.dark('Game deleted successfully!');
       } catch (error) {
-        alert(`Couldn't delete game`);
+        toast.error(`Couldn't delete game`);
       }
     }
   }

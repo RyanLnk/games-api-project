@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
 import ButtonSave from '../../components/ButtonSave';
 import Input from '../../components/Input';
@@ -77,6 +78,7 @@ const GamesForm = () => {
           developerId: Number(developerId),
           platformId: Number(platformId),
         });
+        toast.dark('Game successfully registered!');
       } else {
         await axios.put(`http://localhost:3000/games/${params.id}`, {
           name,
@@ -87,11 +89,11 @@ const GamesForm = () => {
           developerId: Number(developerId),
           platformId: Number(platformId),
         });
+        toast.dark('Game updated successfully!');
       }
       navigate('/');
     } catch (error) {
-      //alert('Error saving data!');
-      console.log(error);
+      toast.error('Error saving data!');
     }
   }
 
